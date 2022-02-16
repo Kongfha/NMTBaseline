@@ -6,5 +6,8 @@ paste dataset/train.seg.th dataset/train.seg.zh | sed -E 's/\t/ ||| /g' > th_zh
 sed -e '/^ |||/d' -e '/||| $/d' zh_th > zh_th.clean
 sed -e '/^ |||/d' -e '/||| $/d' th_zh > th_zh.clean
 
-fast_align -i zh_th.clean -p -o -v -s > forward.align
-fast_align -i th_zh.clean -p -o -v -s > reverse.align
+fast_align -i zh_th.clean -d -o -p ./output/forward.prob -v -s -N > ./output/forward.align
+fast_align -i th_zh.clean -d -o -p ./output/reverse.prob -v -s -N > ./output/reverse.align
+
+rm th_zh*
+rm zh_th*
