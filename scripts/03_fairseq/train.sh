@@ -1,5 +1,5 @@
 python ./fairseq/train.py output/data-bin --task translation \
-        --max-tokens 4000 --source-lang zh --target-lang th --update-freq 4 --ddp-backend=no_c10d \
+        --max-tokens 4000 --source-lang th --target-lang zh --update-freq 4 --ddp-backend=no_c10d \
         --arch transformer  --label-smoothing 0.1 --fp16 \
         --optimizer adam --adam-betas '(0.9, 0.98)' \
         --lr-scheduler inverse_sqrt --warmup-init-lr 1e-07 --warmup-updates 4000  \
