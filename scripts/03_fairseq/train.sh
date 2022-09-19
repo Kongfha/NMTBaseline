@@ -1,4 +1,4 @@
-python fairseq-train output/data-bin --task translation \
+fairseq-train output/data-bin --task translation \
         --max-tokens 4000 --source-lang th --target-lang zh --update-freq 4 --ddp-backend=no_c10d \
         --arch transformer  --label-smoothing 0.1 --fp16 \
         --optimizer adam --adam-betas '(0.9, 0.98)' \
